@@ -46,3 +46,18 @@ Completed: Basic S3 bucket and object-management exercises.
 - Learn about S3 encryption and access policies.
 - Review AWS billing and resource cleanup practices.
 
+- ## Additional Security Check
+
+### Default Encryption
+- Checked the bucket's Properties tab.
+- Confirmed that default encryption uses SSE-S3.
+- Learned that Amazon S3 manages the encryption keys for SSE-S3.
+- Kept Block all public access enabled.
+
+### Key Learning
+Default encryption helps protect objects stored in Amazon S3. Keeping public access blocked helps reduce the risk of unintended public exposure.
+
+## Security Notes
+These settings were inspected in the AWS Management Console. No encryption settings were changed during this check.
+
+
