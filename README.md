@@ -12,6 +12,16 @@ This beginner project documents the design of a secure, scalable web application
 - Document security considerations using IAM roles and security groups.
 - Explore Amazon S3 for object storage and lifecycle management.
 
+  ## Hands-on Labs
+
+### Lab 1: Amazon S3 Bucket Basics
+- Created an S3 general-purpose bucket in the Sydney region.
+- Practised uploading and deleting an object.
+- Verified that Block Public Access was enabled.
+
+[View Lab 1: S3 Bucket Basics](labs/s3-bucket-basics.md)
+
+
 ## Planned AWS Services
 
 - Amazon VPC — network isolation and subnet design.
