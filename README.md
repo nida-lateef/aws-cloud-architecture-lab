@@ -99,3 +99,28 @@ A NAT Gateway in a public subnet can allow resources in a private subnet to init
 ### Current Status
 
 This routing plan is conceptual and has not been deployed in AWS.
+
+## Security Group Design
+
+### Purpose
+
+Security groups act as virtual firewalls for AWS resources. They control allowed inbound and outbound traffic.
+
+### Proposed Rules
+
+| Resource | Direction | Protocol / Port | Source | Purpose |
+|---|---|---|---|---|
+| Load balancer | Inbound | HTTPS / TCP 443 | Intended client sources, such as `0.0.0.0/0` for a public website | Allow secure web requests |
+| Application EC2 | Inbound | Application port, e.g. TCP 8080 | Load balancer security group | Allow application traffic from the load balancer |
+| Application EC2 | Inbound | SSH / TCP 22 | Not open to the public internet | Avoid unrestricted administrative access |
+
+### Security Principles
+
+- Allow only the traffic required by the application.
+- Reference the load balancer security group as the source for application traffic where appropriate.
+- Review outbound rules and restrict them when the application requirements permit.
+- Apply least privilege and review security group rules regularly.
+
+### Current Status
+
+These are proposed example rules for learning purposes. They have not been configured or tested in a live AWS environment.
