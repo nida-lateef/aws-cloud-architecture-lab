@@ -39,3 +39,38 @@ Planning and documentation stage. AWS resources have not yet been deployed.
 ## Disclaimer
 
 This is a learning project. The architecture is a proposed design, not a production deployment.
+
+## VPC Network Design
+
+### Objective
+
+Design a logically isolated AWS network for a web application, separating public-facing resources from application servers that should not be directly accessible from the public internet.
+
+### Proposed IP Address Plan
+
+| Component | IPv4 CIDR | Purpose |
+|---|---|---|
+| VPC | `10.0.0.0/16` | Main network address range |
+| Public subnet | `10.0.1.0/24` | Hosts an internet-facing load balancer, if required |
+| Private subnet | `10.0.2.0/24` | Hosts application EC2 instances |
+
+The subnet ranges are within the VPC range and do not overlap.
+
+### Planned Network Components
+
+- **Internet Gateway:** Supports internet connectivity for resources with suitable routes and configuration.
+- **Route tables:** Direct traffic to the appropriate destinations.
+- **Public subnet:** Planned for the internet-facing load balancer.
+- **Private subnet:** Planned for application servers without direct public internet access.
+- **Security groups:** Restrict traffic to the required ports and sources.
+
+### Security Considerations
+
+- Do not allow unrestricted inbound access to application servers.
+- Allow application traffic only from the appropriate load balancer or trusted sources.
+- Follow the principle of least privilege.
+- Review routing and security rules before deployment.
+
+### Current Status
+
+This is a proposed network design for learning purposes. The VPC, subnets, routes, and AWS resources have not been deployed.
