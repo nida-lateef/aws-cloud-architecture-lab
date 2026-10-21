@@ -124,3 +124,10 @@ Security groups act as virtual firewalls for AWS resources. They control allowed
 ### Current Status
 
 These are proposed example rules for learning purposes. They have not been configured or tested in a live AWS environment.
+
+
+## Architecture Diagram
+
+![AWS VPC Web Architecture Diagram](./AWS%20VPC%20Web%20Architecture%20Diagram.png)
+
+This diagram illustrates the proposed VPC network, public and private subnets, load balancer, NAT Gateway, EC2 instances, and Amazon S3. It is a conceptual design and has not been deployed in AWS.
