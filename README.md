@@ -74,3 +74,28 @@ The subnet ranges are within the VPC range and do not overlap.
 ### Current Status
 
 This is a proposed network design for learning purposes. The VPC, subnets, routes, and AWS resources have not been deployed.
+
+## Routing and NAT Gateway
+
+### Route Table Design
+
+Route tables determine where network traffic is directed.
+
+- **Public subnet route table:** Includes a default IPv4 route (`0.0.0.0/0`) to the Internet Gateway for internet-bound traffic.
+- **Private subnet route table:** Includes a default IPv4 route (`0.0.0.0/0`) to a NAT Gateway for outbound internet access, if required.
+- **Local route:** Allows communication within the VPC's IPv4 network range.
+
+### NAT Gateway Purpose
+
+A NAT Gateway in a public subnet can allow resources in a private subnet to initiate outbound IPv4 connections to the internet without requiring those resources to have public IPv4 addresses.
+
+### Security Notes
+
+- Private application servers should not be directly exposed to the public internet.
+- Security groups should allow only the traffic required by the application.
+- The NAT Gateway needs a suitable route to an Internet Gateway, and the private subnet needs a route to the NAT Gateway.
+- NAT Gateway usage can incur AWS charges, so costs must be considered before deployment.
+
+### Current Status
+
+This routing plan is conceptual and has not been deployed in AWS.
