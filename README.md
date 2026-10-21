@@ -141,3 +141,14 @@ These are proposed example rules for learning purposes. They have not been confi
 ![AWS VPC Web Architecture Diagram](./AWS%20VPC%20Web%20Architecture%20Diagram.png)
 
 This diagram illustrates the proposed VPC network, public and private subnets, load balancer, NAT Gateway, EC2 instances, and Amazon S3. It is a conceptual design and has not been deployed in AWS.
+
+## Object Retrieval Test
+
+- Downloaded the test object from the S3 bucket.
+- Confirmed that the download completed successfully.
+- Practised the basic S3 object workflow: upload, download, and delete.
+
+## Lab Outcome
+
+Successfully practised basic S3 bucket and object management, inspected default encryption, and verified that public access was blocked.
+
